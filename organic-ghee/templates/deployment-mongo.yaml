@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: { { .Values.mongo.name } }
+  namespace: { { .Values.namespace } }
+spec:
+  replicas: { { .Values.mongo.replicas } }
+  selector:
+    matchLabels:
+      app: { { .Values.mongo.name } }
+  template:
+    metadata:
+      labels:
+        app: { { .Values.mongo.name } }
+    spec:
+      containers:
+        - name: mongo
+          image: "{{ .Values.mongo.image }}:{{ .Values.mongo.tag }}"
+          ports:
+            - containerPort: { { .Values.mongo.port } }

@@ -1,0 +1,25 @@
+namespace: bhavana
+
+app:
+  name: organic-ghee-app
+  image: bhavana686/organic-ghees
+  tag: v1
+  replicas: 2
+  port: 5656
+
+mongo:
+  name: mongo
+  image: mongo
+  tag: latest
+  port: 27017
+  replicas: 1
+
+secret:
+  name: app-secrets
+  SESSION_SECRET: "1234"
+  EMAIL_USER: "chagantyteja2502@gmail.com"
+  EMAIL_PASS: "yxoq bjuk rdnt alzp"
+
+service:
+  type: NodePort
+  nodePort: 32000
