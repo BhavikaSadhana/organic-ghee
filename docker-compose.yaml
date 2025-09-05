@@ -11,7 +11,7 @@ services:
     environment:
       - MONGO_URI=mongodb://mongo:27017/organic-ghee
       - SESSION_SECRET=1234
-      - PORT=3000
+      - PORT=5656
       - EMAIL_USER=chagantyteja2502@gmail.com
       - EMAIL_PASS=yxoq bjuk rdnt alzp
 
