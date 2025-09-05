@@ -17,10 +17,10 @@ spec:
         - name: app
           image: bhavana686/organic-ghees:v1
           ports:
-            - containerPort: 5656 # 👈 updated
+            - containerPort: 5656
           env:
             - name: PORT
-              value: "5656" # 👈 force Node.js to use 5656
+              value: "5656"
             - name: MONGO_URI
               value: mongodb://mongo:27017/organic-ghee
             - name: SESSION_SECRET
@@ -49,6 +49,6 @@ spec:
   selector:
     app: organic-ghee
   ports:
-    - port: 5656 # 👈 updated
-      targetPort: 5656 # 👈 updated
-      nodePort: 32000 # 👈 external port
+    - port: 5656 
+      targetPort: 5656
+      nodePort: 32000
