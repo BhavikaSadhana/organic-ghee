@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  frontend-app:
+    build: .
+    container_name: organic-ghee-app
+    ports:
+      - '5656:5656'
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/organic-ghee
+      - SESSION_SECRET=1234
+      - PORT=3000
+      - EMAIL_USER=chagantyteja2502@gmail.com
+      - EMAIL_PASS=yxoq bjuk rdnt alzp
+
+   mongo:
+      image: mongo:latest
+      ports:
+        - '27017:27017'
